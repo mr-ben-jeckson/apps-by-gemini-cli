@@ -13,7 +13,6 @@ export class ChatController {
 
   @Post()
   @ApiBearerAuth()
-  @ApiBody({ type: ChatMessageDto })
   @ApiResponse({ status: 200, description: 'Successful chat response', type: ChatResponseDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   chat(@Body('message') message: string, @Req() request) {
